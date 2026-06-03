@@ -5,148 +5,160 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>张海昕 | 运维工程师</title>
 <style>
+:root{--bg:#0a0e17;--card:#111827;--border:#1e293b;--text:#cbd5e1;--muted:#64748b;--blue:#38bdf8;--green:#22c55e;--purple:#a78bfa}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,'Microsoft YaHei',sans-serif;background:#0f172a;color:#e2e8f0;line-height:1.6}
-.container{max-width:720px;margin:0 auto;padding:80px 20px}
-
-/* 头部 */
-.hero{text-align:center;margin-bottom:60px}
-.avatar{width:100px;height:100px;border-radius:50%;border:3px solid #38bdf8;margin-bottom:20px}
-.hero h1{font-size:32px;color:#fff;margin-bottom:8px}
-.hero .tagline{color:#94a3b8;font-size:16px;margin-bottom:4px}
-.hero .location{color:#64748b;font-size:14px}
-
-/* 技能标签 */
-.skills{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:24px 0}
-.skill{padding:6px 16px;background:#1e293b;border:1px solid #334155;border-radius:20px;font-size:14px;color:#cbd5e1}
-
-/* 分区 */
-.section{margin-bottom:48px}
-.section h2{font-size:20px;color:#38bdf8;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid #1e293b}
-
-/* 项目卡片 */
-.project{background:#1e293b;border-radius:12px;padding:24px;margin-bottom:16px;border:1px solid #334155}
-.project h3{color:#fff;font-size:17px;margin-bottom:4px}
-.project h3 a{color:#fff;text-decoration:none}
-.project h3 a:hover{color:#38bdf8}
-.project .tech{color:#94a3b8;font-size:13px;margin:8px 0}
-.project .desc{color:#cbd5e1;font-size:14px;margin-top:8px}
-.project .desc li{margin:4px 0;list-style:disc;margin-left:20px}
-
-/* 状态条 */
-.status-bar{background:#1e293b;border-radius:12px;padding:20px;text-align:center;border:1px solid #334155}
-.status-dot{display:inline-block;width:10px;height:10px;background:#22c55e;border-radius:50%;margin-right:6px;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
-.status-text{color:#22c55e;font-size:16px;font-weight:600}
-
-/* 联系 */
-.contact{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:16px}
-.contact a{color:#38bdf8;text-decoration:none;padding:8px 20px;border:1px solid #334155;border-radius:8px;font-size:14px}
-.contact a:hover{background:#1e293b}
-
-/* footer */
-.footer{text-align:center;color:#475569;font-size:12px;margin-top:40px}
-
-/* 响应式 */
-@media(max-width:600px){.container{padding:40px 16px}.hero h1{font-size:24px}}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,'Segoe UI','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+.bg-grid{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.bg-grid::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background-image:radial-gradient(circle at 1px 1px,#1e293b 1px,transparent 0);background-size:40px 40px;mask-image:radial-gradient(ellipse at center,black 30%,transparent 70%)}
+.container{max-width:760px;margin:0 auto;padding:60px 20px;position:relative;z-index:1}
+.nav{display:flex;justify-content:center;gap:32px;margin-bottom:48px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;transition:color .3s;padding:4px 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--blue);border-bottom-color:var(--blue)}
+.hero{text-align:center;margin-bottom:64px;position:relative}
+.hero::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:300px;height:300px;background:radial-gradient(circle,rgba(56,189,248,.08) 0%,transparent 70%);border-radius:50%;z-index:-1;pointer-events:none}
+.avatar-wrap{position:relative;display:inline-block;margin-bottom:24px}
+.avatar-wrap::before{content:'';position:absolute;inset:-4px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--purple));z-index:-1;animation:spin 4s linear infinite}
+@keyframes spin{100%{transform:rotate(360deg)}}
+.avatar{width:100px;height:100px;border-radius:50%;display:block;border:3px solid var(--bg)}
+.hero h1{font-size:34px;color:#fff;margin-bottom:8px;letter-spacing:-0.5px}
+.hero .title{color:var(--blue);font-size:17px;margin-bottom:6px;font-weight:500}
+.hero .sub{color:var(--muted);font-size:14px}
+.badges{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:24px 0}
+.badge{padding:6px 14px;border-radius:20px;font-size:13px;font-weight:500;background:rgba(56,189,248,.1);color:var(--blue);border:1px solid rgba(56,189,248,.2)}
+.section{margin-bottom:56px}
+.section-title{display:flex;align-items:center;gap:12px;font-size:20px;color:#fff;margin-bottom:20px;font-weight:700}
+.section-title .icon{font-size:24px}
+.section-title::after{content:'';flex:1;height:1px;background:var(--border)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:16px;transition:border-color .3s,transform .3s,box-shadow .3s}
+.card:hover{border-color:rgba(56,189,248,.3);transform:translateY(-2px);box-shadow:0 8px 40px rgba(0,0,0,.3)}
+.card-header{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.card-icon{font-size:28px}
+.card h3{color:#fff;font-size:17px;flex:1}
+.card h3 a{color:#fff;text-decoration:none}
+.card h3 a:hover{color:var(--blue)}
+.card .tech{color:var(--muted);font-size:12px;margin:10px 0;display:flex;flex-wrap:wrap;gap:6px}
+.card .tech span{padding:3px 10px;background:rgba(255,255,255,.04);border-radius:6px}
+.card ul{list-style:none;margin-top:12px}
+.card ul li{color:var(--text);font-size:14px;padding:3px 0 3px 18px;position:relative}
+.card ul li::before{content:'▸';position:absolute;left:0;color:var(--blue);font-size:12px;top:5px}
+.status-bar{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;text-align:center}
+.status-dot{display:inline-block;width:12px;height:12px;background:var(--green);border-radius:50%;margin-right:8px;animation:glow 2s infinite;box-shadow:0 0 12px rgba(34,197,94,.4)}
+@keyframes glow{0%,100%{box-shadow:0 0 8px rgba(34,197,94,.4)}50%{box-shadow:0 0 20px rgba(34,197,94,.6)}}
+.status-text{color:var(--green);font-size:18px;font-weight:700}
+.status-sub{color:var(--muted);font-size:13px;margin-top:4px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:16px}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center}
+.stat-num{font-size:28px;font-weight:800;color:var(--blue)}
+.stat-label{font-size:12px;color:var(--muted);margin-top:4px}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.contact-btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;background:var(--card);border:1px solid var(--border);border-radius:12px;color:var(--text);text-decoration:none;font-size:14px;transition:all .3s}
+.contact-btn:hover{border-color:var(--blue);color:var(--blue)}
+.footer{text-align:center;margin-top:60px;padding:30px 0;border-top:1px solid var(--border)}
+.footer .tag{color:var(--muted);font-size:12px}
+.footer .tag span{color:var(--blue)}
+.fade-in{opacity:0;transform:translateY(20px);animation:fadeIn .6s forwards}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
+.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.3s}.d4{animation-delay:.4s}.d5{animation-delay:.5s}
+@media(max-width:640px){.container{padding:40px 16px}.hero h1{font-size:26px}.stats{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
-
+<div class="bg-grid"></div>
 <div class="container">
 
-  <!-- 头部 -->
-  <div class="hero">
-    <img src="https://github.com/zhx123-0.png" alt="avatar" class="avatar">
-    <h1>张海昕</h1>
-    <p class="tagline">运维工程师 / 应用运维 / DevOps</p>
-    <p class="location">📍 深圳 · 2026届应届毕业生 · 智能科学与技术 本科</p>
-    <div class="skills">
-      <span class="skill">Linux</span>
-      <span class="skill">Docker</span>
-      <span class="skill">Kubernetes</span>
-      <span class="skill">Python</span>
-      <span class="skill">Prometheus</span>
-      <span class="skill">Grafana</span>
-      <span class="skill">GitHub Actions</span>
-      <span class="skill">Shell</span>
-      <span class="skill">阿里云</span>
-      <span class="skill">Nginx</span>
-      <span class="skill">AI Agent</span>
-    </div>
-  </div>
+<nav class="nav fade-in"><a href="#about">关于</a><a href="#projects">项目</a><a href="#status">状态</a><a href="status.html">📡</a><a href="tools.html">🔧</a><a href="/ai-marketing/">🤖</a><a href="#contact">联系</a></nav>
 
-  <!-- 项目 -->
-  <div class="section">
-    <h2>🛠️ 项目经历</h2>
+<header class="hero fade-in d1" id="about">
+<div class="avatar-wrap"><img src="https://github.com/zhx123-0.png" alt="avatar" class="avatar"></div>
+<h1>张海昕</h1>
+<p class="title">运维工程师 / 应用运维 / DevOps</p>
+<p class="sub">📍 深圳 · 2026届应届毕业生 · 智能科学与技术 本科</p>
+<div class="badges">
+<span class="badge">Linux</span><span class="badge">Docker</span><span class="badge">K8s</span><span class="badge">Python</span><span class="badge">Prometheus</span><span class="badge">Grafana</span><span class="badge">CI/CD</span><span class="badge">阿里云</span><span class="badge">AI Agent</span>
+</div>
+</header>
 
-    <div class="project">
-      <h3><a href="https://github.com/zhx123-0/ops-app" target="_blank">运维监控与 AI 告警分析平台 →</a></h3>
-      <p class="tech">Python · Flask · Docker · Kubernetes · Prometheus · Grafana · Coze AI · GitHub Actions</p>
-      <ul class="desc">
-        <li>从零搭建完整运维监控闭环：Flask 应用 → Prometheus 采集 → Grafana 可视化 → Coze AI 自动分析告警</li>
-        <li>K8s 部署 + liveness/readiness 探针，独立排查并修复探针超时导致 Pod 反复重启的故障</li>
-        <li>GitHub Actions CI/CD 自动构建测试 + 阿里云 ECS + Nginx 反向代理生产部署</li>
-      </ul>
-    </div>
+<section class="section fade-in d2" id="projects">
+<h2 class="section-title"><span class="icon">🛠️</span> 项目经历</h2>
 
-    <div class="project">
-      <h3><a href="https://github.com/zhx123-0" target="_blank">个人技术站点（全链路 DevOps） →</a></h3>
-      <p class="tech">Docker · Nginx · 阿里云 ECS · Let's Encrypt · HTTPS · GitHub Actions · Prometheus</p>
-      <ul class="desc">
-        <li>个人技术主页，Docker 容器化部署至阿里云 ECS，Nginx 反向代理 + Let's Encrypt SSL 证书</li>
-        <li>GitHub Actions 自动部署：代码推送 → 自动同步到服务器，实现持续交付</li>
-        <li>Prometheus + Grafana 监控站点 uptime 和响应时间，/health 健康检查端点探活</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- 实习 -->
-  <div class="section">
-    <h2>💼 实习经历</h2>
-    <div class="project">
-      <h3>深圳数阔信息技术有限公司</h3>
-      <p class="tech">RPA 运维实习生 · 2025.07 - 2025.08</p>
-      <ul class="desc">
-        <li>负责 RPA 自动化流程日常巡检与故障处理，保障多条流程稳定运行</li>
-        <li>分析异常原因，整理故障处理 SOP 文档，参与周度数据汇总与故障复盘</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- 状态 -->
-  <div class="section">
-    <h2>📡 站点状态</h2>
-    <div class="status-bar">
-      <span class="status-dot"></span>
-      <span class="status-text">所有服务正常运行 · zhanghaixin.top</span>
-    </div>
-  </div>
-
-  <!-- 教育 -->
-  <div class="section">
-    <h2>🎓 教育背景</h2>
-    <div class="project">
-      <h3>三亚学院</h3>
-      <p class="tech">智能科学与技术 · 本科 · 2022.09 - 2026.06</p>
-      <p class="tech">主修：Python 程序设计 · 计算机网络 · 操作系统 · 数据库原理 · 数据结构</p>
-      <p class="tech">证书：CET-4 · 普通话二级甲等</p>
-    </div>
-  </div>
-
-  <!-- 联系 -->
-  <div class="section">
-    <h2>📬 联系方式</h2>
-    <div class="contact">
-      <a href="mailto:1422540986@qq.com">📧 邮箱</a>
-      <a href="https://github.com/zhx123-0" target="_blank">💻 GitHub</a>
-      <a href="https://github.com/zhx123-0/ops-app" target="_blank">🔗 ops-app</a>
-    </div>
-  </div>
-
-  <p class="footer">zhanghaixin.top · Docker + Nginx · Aliyun ECS · Auto Deploy via GitHub Actions</p>
-
+<div class="card">
+<div class="card-header"><span class="card-icon">📊</span><h3><a href="https://github.com/zhx123-0/ops-app" target="_blank">运维监控与 AI 告警分析平台</a></h3></div>
+<div class="tech"><span>Python</span><span>Flask</span><span>Docker</span><span>Kubernetes</span><span>Prometheus</span><span>Grafana</span><span>Coze AI</span><span>GitHub Actions</span></div>
+<ul>
+<li>从零搭建完整运维监控闭环：Flask /metrics → Prometheus 采集 → Grafana 可视化 → Coze AI 自动分析告警</li>
+<li>K8s 部署 + liveness/readiness 探针，独立排查并修复探针超时导致 Pod 反复重启的故障</li>
+<li>阿里云 ECS + Nginx 反向代理生产部署，GitHub Actions CI/CD 自动构建测试</li>
+</ul>
 </div>
 
+<div class="card">
+<div class="card-header"><span class="card-icon">🌐</span><h3><a href="https://github.com/zhx123-0/cloud-ops-deploy" target="_blank">个人技术站点 · 全链路 DevOps</a></h3></div>
+<div class="tech"><span>Docker</span><span>Nginx</span><span>阿里云 ECS</span><span>Let's Encrypt</span><span>HTTPS</span><span>GitHub Actions</span></div>
+<ul>
+<li>你正在看的这个网站 —— Docker 容器化部署至阿里云 ECS，Nginx 反向代理 + SSL 证书</li>
+<li>GitHub Actions 持续交付：代码推送自动同步到服务器，零停机更新</li>
+<li>Prometheus + Grafana 实时监控站点 uptime 和响应时间，/health 端点探活</li>
+</ul>
+</div>
+	<div class="card">
+	<div class="card-header"><span class="card-icon">🤖</span><h3><a href="/ai-marketing/" target="_blank">AI 电商营销助手 · 线上可交互</a></h3></div>
+	<div class="tech"><span>Coze AI</span><span>Flask</span><span>Python</span><span>SSE 流式 API</span><span>Docker</span><span>Nginx</span><span>阿里云 ECS</span></div>
+	<ul>
+	<li>AI 驱动电商营销方案生成平台：上传图片+输入产品 → 自动输出市场分析/文案/Prompt/推广建议</li>
+	<li>Coze 推理模型 + Flask 桥接 + SSE 流式响应，支持多模态图片识别输入</li>
+	<li>线上可直接使用：<a href="/ai-marketing/" style="color:var(--blue)">zhanghaixin.top/ai-marketing</a></li>
+	</ul>
+	</div>
+	</section>
+
+<section class="section fade-in d3">
+<h2 class="section-title"><span class="icon">💼</span> 实习经历</h2>
+<div class="card">
+<div class="card-header"><span class="card-icon">🏢</span><h3>深圳数阔信息技术有限公司</h3></div>
+<p class="tech"><span>RPA 运维实习生</span> · 2025.07 - 2025.08</p>
+<ul>
+<li>负责 RPA 自动化流程日常巡检与故障处理，保障业务流程稳定运行</li>
+<li>分析异常原因，整理故障处理 SOP 文档，参与运行数据汇总与故障复盘</li>
+</ul>
+</div>
+</section>
+
+<section class="section fade-in d4" id="status">
+<h2 class="section-title"><span class="icon">📡</span> 站点状态</h2>
+<div class="status-bar">
+<span class="status-dot"></span><span class="status-text">所有服务正常运行</span>
+<p class="status-sub">zhanghaixin.top · Docker + Nginx · Aliyun ECS</p>
+<p style="margin-top:12px"><a href="status.html" style="color:var(--blue);text-decoration:none;font-size:14px">📡 查看详细状态 →</a>　<a href="tools.html" style="color:var(--blue);text-decoration:none;font-size:14px">🔧 运维工具箱 →</a>　<a href="/ai-marketing/" style="color:var(--blue);text-decoration:none;font-size:14px">🤖 AI 营销助手 →</a></p>
+</div>
+<div class="stats">
+<div class="stat-card"><div class="stat-num">99.9%</div><div class="stat-label">Uptime</div></div>
+<div class="stat-card"><div class="stat-num">3</div><div class="stat-label">GitHub 项目</div></div>
+<div class="stat-card"><div class="stat-num">10+</div><div class="stat-label">技术栈</div></div>
+<div class="stat-card"><div class="stat-num">ECS</div><div class="stat-label">云服务器</div></div>
+</div>
+</section>
+
+<section class="section fade-in d4">
+<h2 class="section-title"><span class="icon">🎓</span> 教育背景</h2>
+<div class="card">
+<div class="card-header"><span class="card-icon">🏫</span><h3>三亚学院</h3></div>
+<p class="tech"><span>智能科学与技术</span> · 本科 · 2022.09 - 2026.06</p>
+<p class="tech">主修：Python 程序设计 · 计算机网络 · 操作系统 · 数据库原理 · 数据结构</p>
+<p class="tech">证书：普通话二级甲等</p>
+</div>
+</section>
+
+<section class="section fade-in d5" id="contact">
+<h2 class="section-title"><span class="icon">📬</span> 联系方式</h2>
+<div class="contact-grid">
+<a href="mailto:1422540986@qq.com" class="contact-btn">📧 Email</a>
+<a href="https://github.com/zhx123-0" target="_blank" class="contact-btn">💻 GitHub</a>
+<a href="https://github.com/zhx123-0/ops-app" target="_blank" class="contact-btn">📊 ops-app</a>
+</div>
+</section>
+
+<footer class="footer"><p class="tag">zhanghaixin.top · <span>Docker</span> + <span>Nginx</span> · <span>Aliyun ECS</span> · <span>GitHub Actions</span></p></footer>
+</div>
 </body>
 </html>
