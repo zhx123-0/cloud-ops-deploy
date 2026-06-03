@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>张海昕 | 运维工程师</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,'Microsoft YaHei',sans-serif;background:#0f172a;color:#e2e8f0;line-height:1.6}
+.container{max-width:720px;margin:0 auto;padding:80px 20px}
+
+/* 头部 */
+.hero{text-align:center;margin-bottom:60px}
+.avatar{width:100px;height:100px;border-radius:50%;border:3px solid #38bdf8;margin-bottom:20px}
+.hero h1{font-size:32px;color:#fff;margin-bottom:8px}
+.hero .tagline{color:#94a3b8;font-size:16px;margin-bottom:4px}
+.hero .location{color:#64748b;font-size:14px}
+
+/* 技能标签 */
+.skills{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:24px 0}
+.skill{padding:6px 16px;background:#1e293b;border:1px solid #334155;border-radius:20px;font-size:14px;color:#cbd5e1}
+
+/* 分区 */
+.section{margin-bottom:48px}
+.section h2{font-size:20px;color:#38bdf8;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid #1e293b}
+
+/* 项目卡片 */
+.project{background:#1e293b;border-radius:12px;padding:24px;margin-bottom:16px;border:1px solid #334155}
+.project h3{color:#fff;font-size:17px;margin-bottom:4px}
+.project h3 a{color:#fff;text-decoration:none}
+.project h3 a:hover{color:#38bdf8}
+.project .tech{color:#94a3b8;font-size:13px;margin:8px 0}
+.project .desc{color:#cbd5e1;font-size:14px;margin-top:8px}
+.project .desc li{margin:4px 0;list-style:disc;margin-left:20px}
+
+/* 状态条 */
+.status-bar{background:#1e293b;border-radius:12px;padding:20px;text-align:center;border:1px solid #334155}
+.status-dot{display:inline-block;width:10px;height:10px;background:#22c55e;border-radius:50%;margin-right:6px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.status-text{color:#22c55e;font-size:16px;font-weight:600}
+
+/* 联系 */
+.contact{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.contact a{color:#38bdf8;text-decoration:none;padding:8px 20px;border:1px solid #334155;border-radius:8px;font-size:14px}
+.contact a:hover{background:#1e293b}
+
+/* footer */
+.footer{text-align:center;color:#475569;font-size:12px;margin-top:40px}
+
+/* 响应式 */
+@media(max-width:600px){.container{padding:40px 16px}.hero h1{font-size:24px}}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- 头部 -->
+  <div class="hero">
+    <img src="https://github.com/zhx123-0.png" alt="avatar" class="avatar">
+    <h1>张海昕</h1>
+    <p class="tagline">运维工程师 / 应用运维 / DevOps</p>
+    <p class="location">📍 深圳 · 2026届应届毕业生 · 智能科学与技术 本科</p>
+    <div class="skills">
+      <span class="skill">Linux</span>
+      <span class="skill">Docker</span>
+      <span class="skill">Kubernetes</span>
+      <span class="skill">Python</span>
+      <span class="skill">Prometheus</span>
+      <span class="skill">Grafana</span>
+      <span class="skill">GitHub Actions</span>
+      <span class="skill">Shell</span>
+      <span class="skill">阿里云</span>
+      <span class="skill">Nginx</span>
+      <span class="skill">AI Agent</span>
+    </div>
+  </div>
+
+  <!-- 项目 -->
+  <div class="section">
+    <h2>🛠️ 项目经历</h2>
+
+    <div class="project">
+      <h3><a href="https://github.com/zhx123-0/ops-app" target="_blank">运维监控与 AI 告警分析平台 →</a></h3>
+      <p class="tech">Python · Flask · Docker · Kubernetes · Prometheus · Grafana · Coze AI · GitHub Actions</p>
+      <ul class="desc">
+        <li>从零搭建完整运维监控闭环：Flask 应用 → Prometheus 采集 → Grafana 可视化 → Coze AI 自动分析告警</li>
+        <li>K8s 部署 + liveness/readiness 探针，独立排查并修复探针超时导致 Pod 反复重启的故障</li>
+        <li>GitHub Actions CI/CD 自动构建测试 + 阿里云 ECS + Nginx 反向代理生产部署</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <h3><a href="https://github.com/zhx123-0" target="_blank">个人技术站点（全链路 DevOps） →</a></h3>
+      <p class="tech">Docker · Nginx · 阿里云 ECS · Let's Encrypt · HTTPS · GitHub Actions · Prometheus</p>
+      <ul class="desc">
+        <li>个人技术主页，Docker 容器化部署至阿里云 ECS，Nginx 反向代理 + Let's Encrypt SSL 证书</li>
+        <li>GitHub Actions 自动部署：代码推送 → 自动同步到服务器，实现持续交付</li>
+        <li>Prometheus + Grafana 监控站点 uptime 和响应时间，/health 健康检查端点探活</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 实习 -->
+  <div class="section">
+    <h2>💼 实习经历</h2>
+    <div class="project">
+      <h3>深圳数阔信息技术有限公司</h3>
+      <p class="tech">RPA 运维实习生 · 2025.07 - 2025.08</p>
+      <ul class="desc">
+        <li>负责 RPA 自动化流程日常巡检与故障处理，保障多条流程稳定运行</li>
+        <li>分析异常原因，整理故障处理 SOP 文档，参与周度数据汇总与故障复盘</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 状态 -->
+  <div class="section">
+    <h2>📡 站点状态</h2>
+    <div class="status-bar">
+      <span class="status-dot"></span>
+      <span class="status-text">所有服务正常运行 · zhanghaixin.top</span>
+    </div>
+  </div>
+
+  <!-- 教育 -->
+  <div class="section">
+    <h2>🎓 教育背景</h2>
+    <div class="project">
+      <h3>三亚学院</h3>
+      <p class="tech">智能科学与技术 · 本科 · 2022.09 - 2026.06</p>
+      <p class="tech">主修：Python 程序设计 · 计算机网络 · 操作系统 · 数据库原理 · 数据结构</p>
+      <p class="tech">证书：CET-4 · 普通话二级甲等</p>
+    </div>
+  </div>
+
+  <!-- 联系 -->
+  <div class="section">
+    <h2>📬 联系方式</h2>
+    <div class="contact">
+      <a href="mailto:1422540986@qq.com">📧 邮箱</a>
+      <a href="https://github.com/zhx123-0" target="_blank">💻 GitHub</a>
+      <a href="https://github.com/zhx123-0/ops-app" target="_blank">🔗 ops-app</a>
+    </div>
+  </div>
+
+  <p class="footer">zhanghaixin.top · Docker + Nginx · Aliyun ECS · Auto Deploy via GitHub Actions</p>
+
+</div>
+
+</body>
+</html>
